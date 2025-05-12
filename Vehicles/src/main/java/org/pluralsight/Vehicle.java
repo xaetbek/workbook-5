@@ -14,6 +14,48 @@ public class Vehicle {
     private int odometer;
     private boolean isElectric;
 
+    public Vehicle(String typeOfVehicle, String vehicleMake, String vehicleModel, String color, int passengerCount, int cargoCapacity, int fuelCapacity, int travelRange, int vehicleYearMade, String vehicleID, int odometer, boolean isElectric) {
+        this.typeOfVehicle = typeOfVehicle;
+        this.vehicleMake = vehicleMake;
+        this.vehicleModel = vehicleModel;
+        this.color = color;
+        this.passengerCount = passengerCount;
+        this.cargoCapacity = cargoCapacity;
+        this.fuelCapacity = fuelCapacity;
+        this.travelRange = travelRange;
+        this.vehicleYearMade = vehicleYearMade;
+        this.vehicleID = vehicleID;
+        this.odometer = odometer;
+        this.isElectric = isElectric;
+    }
+
+    public Vehicle() {
+    }
+
+    public String getTypeOfVehicle() {
+        return typeOfVehicle;
+    }
+
+    public void setTypeOfVehicle(String typeOfVehicle) {
+        this.typeOfVehicle = typeOfVehicle;
+    }
+
+    public String getVehicleMake() {
+        return vehicleMake;
+    }
+
+    public void setVehicleMake(String vehicleMake) {
+        this.vehicleMake = vehicleMake;
+    }
+
+    public String getVehicleModel() {
+        return vehicleModel;
+    }
+
+    public void setVehicleModel(String vehicleModel) {
+        this.vehicleModel = vehicleModel;
+    }
+
     public String getColor() {
         return color;
     }
@@ -22,31 +64,7 @@ public class Vehicle {
         this.color = color;
     }
 
-    public String typeOfVehicle() {
-        return typeOfVehicle;
-    }
-
-    public void setTypeOfVehicle(String typeOfVehicle) {
-        this.typeOfVehicle = typeOfVehicle;
-    }
-
-    public String vehicleMake() {
-        return vehicleMake;
-    }
-
-    public void setVehicleMake(String vehicleMake) {
-        this.vehicleMake = vehicleMake;
-    }
-
-    public String vehicleModel() {
-        return vehicleModel;
-    }
-
-    public void setVehicleModel(String vehicleModel) {
-        this.vehicleModel = vehicleModel;
-    }
-
-    public int passengerCount() {
+    public int getPassengerCount() {
         return passengerCount;
     }
 
@@ -54,7 +72,7 @@ public class Vehicle {
         this.passengerCount = passengerCount;
     }
 
-    public int cargoCapacity() {
+    public int getCargoCapacity() {
         return cargoCapacity;
     }
 
@@ -62,7 +80,7 @@ public class Vehicle {
         this.cargoCapacity = cargoCapacity;
     }
 
-    public int fuelCapacity() {
+    public int getFuelCapacity() {
         return fuelCapacity;
     }
 
@@ -70,7 +88,7 @@ public class Vehicle {
         this.fuelCapacity = fuelCapacity;
     }
 
-    public int travelRange() {
+    public int getTravelRange() {
         return travelRange;
     }
 
@@ -78,7 +96,7 @@ public class Vehicle {
         this.travelRange = travelRange;
     }
 
-    public int vehicleYearMade() {
+    public int getVehicleYearMade() {
         return vehicleYearMade;
     }
 
@@ -86,7 +104,7 @@ public class Vehicle {
         this.vehicleYearMade = vehicleYearMade;
     }
 
-    public String vehicleID() {
+    public String getVehicleID() {
         return vehicleID;
     }
 
@@ -94,7 +112,7 @@ public class Vehicle {
         this.vehicleID = vehicleID;
     }
 
-    public int odometer() {
+    public int getOdometer() {
         return odometer;
     }
 
@@ -109,5 +127,4 @@ public class Vehicle {
     public void setElectric(boolean electric) {
         isElectric = electric;
     }
-
 }
