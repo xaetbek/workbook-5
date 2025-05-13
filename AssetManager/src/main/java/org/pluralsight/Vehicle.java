@@ -1,5 +1,7 @@
 package org.pluralsight;
 
+import java.time.Year;
+
 public class Vehicle extends Asset{
     protected String makeModel;
     protected int year;
@@ -12,29 +14,51 @@ public class Vehicle extends Asset{
         this.odometer = odometer;
     }
 
+//    @Override
+//    public double getValue() {
+//        double value;
+//
+//        if (year >= 0 && year <= 3) {
+//            value = originalCost * Math.pow(0.97, year);
+//        } else if (year >= 4 && year <= 6) {
+//            value = originalCost * Math.pow(0.94, year);
+//        } else if (year >= 7 && year <= 10) {
+//            value = originalCost * Math.pow(0.92, year);
+//        } else {
+//            value = 1000.00;
+//        }
+//
+//        if (odometer > 100000 &&
+//                !makeModel.contains("Honda") &&
+//                !makeModel.contains("Toyota")) {
+//            value *= 0.75;
+//        }
+//
+//        return value;
+//    }
+
     @Override
     public double getValue() {
+        int currentYear = Year.now().getValue();
+        int age = currentYear - year;
         double value;
 
-        if (year >= 0 && year <= 3) {
-            value = originalCost * Math.pow(0.97, year);
-        } else if (year >= 4 && year <= 6) {
-            value = originalCost * Math.pow(0.94, year);
-        } else if (year >= 7 && year <= 10) {
-            value = originalCost * Math.pow(0.92, year);
+        if (age <= 3) {
+            value = getOriginalCost() * Math.pow(0.97, age);
+        } else if (age <= 6) {
+            value = getOriginalCost() * Math.pow(0.94, age);
+        } else if (age <= 10) {
+            value = getOriginalCost() * Math.pow(0.92, age);
         } else {
             value = 1000.00;
         }
 
-        if (odometer > 100000 &&
-                !makeModel.contains("Honda") &&
-                !makeModel.contains("Toyota")) {
+        if (odometer > 100000 && !(makeModel.toLowerCase().contains("honda") || makeModel.toLowerCase().contains("toyota"))) {
             value *= 0.75;
         }
 
-        return value;
+        return Math.round(value * 100.0) / 100.0;
     }
-
 
     // Getters and Setters
     public String getMakeModel() {
