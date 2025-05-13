@@ -1,9 +1,9 @@
 package org.pluralsight;
 
 public class Asset {
-    String description;
-    String dateAcquired;
-    double originalCost;
+    protected String description;
+    protected String dateAcquired;
+    protected double originalCost;
 
     // Constructor
     public Asset(String description, String dateAcquired, double originalCost) {
