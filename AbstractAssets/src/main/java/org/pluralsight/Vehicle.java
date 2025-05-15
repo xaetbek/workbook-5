@@ -2,7 +2,7 @@ package org.pluralsight;
 
 import java.time.Year;
 
-public class Vehicle extends Asset{
+public class Vehicle extends Asset {
     protected String makeModel;
     protected int year;
     protected int odometer;

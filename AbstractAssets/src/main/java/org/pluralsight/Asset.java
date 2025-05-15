@@ -1,23 +1,17 @@
 package org.pluralsight;
 
-public class Asset {
+public abstract class Asset {
+
     protected String description;
     protected String dateAcquired;
     protected double originalCost;
 
-    // Constructor
     public Asset(String description, String dateAcquired, double originalCost) {
         this.description = description;
         this.dateAcquired = dateAcquired;
         this.originalCost = originalCost;
     }
 
-    // Method
-    public double getValue() {
-        return originalCost;
-    }
-
-    // Getters and Setters
     public String getDescription() {
         return description;
     }
@@ -41,4 +35,8 @@ public class Asset {
     public void setOriginalCost(double originalCost) {
         this.originalCost = originalCost;
     }
+
+    public abstract double getValue();
+
+
 }

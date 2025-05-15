@@ -2,8 +2,6 @@ package org.pluralsight;
 
 import java.util.ArrayList;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
         ArrayList<Asset> assets = new ArrayList<>();
@@ -20,6 +18,9 @@ public class Main {
         Vehicle rentalVehicle = new Vehicle("rental car", "04/30/2025", 131000.00, "Cadillac Escalade", 2018, 300);
         assets.add(rentalVehicle);
 
+        Cash cash = new Cash("a cash saving","04/05/2025",45000.0);
+        assets.add(cash);
+
         for (Asset asset : assets) {
             if (asset instanceof House) {
                 System.out.println("\nHouse Asset: ");
@@ -31,6 +32,10 @@ public class Main {
                 System.out.println("This is " + asset.getDescription() + ". I acquired it in " + asset.getDateAcquired() +
                         " for the price of $" + String.format("%,.2f",asset.getOriginalCost()) + ". The value as of today is $" + String.format("%,.2f", asset.getValue()) +
                         " \nThe year is " + ((Vehicle) asset).getYear() + " and the manufacturer is " + ((Vehicle) asset).getMakeModel() + ".");
+            }
+            if(asset instanceof Cash){
+                System.out.println("\nCash Asset:");
+                System.out.println("This is " + asset.getDescription() + " | The amount: $" + String.format("%,.2f",asset.getOriginalCost()) + " | As of " + asset.getDateAcquired());
             }
         }
     }
